@@ -6,7 +6,9 @@ import HTMLFlipBook from "react-pageflip";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 const Flipbook: React.FC = () => {
-  const flipBookRef = useRef<HTMLFlipBook>(null);
+  // Fixing the ref type error
+//   const flipBookRef = useRef<HTMLFlipBook | null>(null);
+const flipBookRef = useRef<any | null>(null);
   const fullScreenHandle = useFullScreenHandle();
 
   const goToNextPage = () => {
@@ -103,3 +105,4 @@ const Flipbook: React.FC = () => {
 };
 
 export default Flipbook;
+
